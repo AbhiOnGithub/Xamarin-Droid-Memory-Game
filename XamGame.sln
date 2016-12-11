@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamGame", "XamGame\XamGame.csproj", "{F842C946-7EAD-40C9-9C13-8D9A1D86D514}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamGame.UITests", "XamGame.UITests\XamGame.UITests.csproj", "{D89D529C-7B91-451A-9DF5-163F1C77D31A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F842C946-7EAD-40C9-9C13-8D9A1D86D514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F842C946-7EAD-40C9-9C13-8D9A1D86D514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F842C946-7EAD-40C9-9C13-8D9A1D86D514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F842C946-7EAD-40C9-9C13-8D9A1D86D514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89D529C-7B91-451A-9DF5-163F1C77D31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89D529C-7B91-451A-9DF5-163F1C77D31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89D529C-7B91-451A-9DF5-163F1C77D31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89D529C-7B91-451A-9DF5-163F1C77D31A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
