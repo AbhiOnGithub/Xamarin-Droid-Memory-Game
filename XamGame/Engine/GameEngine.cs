@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Android.App;
+using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Widget;
+using Java.Lang;
 using XamGame.Common;
 using XamGame.Events;
 using XamGame.Models;
 using XamGame.Themes;
 using XamGame.UI;
+using XamGame.Utils;
 
 namespace XamGame.Engine
 {
@@ -130,6 +135,16 @@ namespace XamGame.Engine
 
 		public void onEvent(ResetBackgroundEvent evt)
 		{
+			Drawable drawable = mBackgroundImage.Drawable;
+			if (drawable != null)
+			{
+				((TransitionDrawable)drawable).ReverseTransition(2000);
+			}
+			else {
+				Bitmap bitmap = GameUtility.ScaleDown(Resource.Drawable.background, GameUtility.ScreenWidth(), GameUtility.ScreenHeight());
+				mBackgroundImage.SetImageBitmap(bitmap);
+			}
+		
 		}
 
 		public void onEvent(BackGameEvent evt)
@@ -143,7 +158,18 @@ namespace XamGame.Engine
 			mSelectedTheme = evt.theme;
 			mScreenController.openScreen(ScreenController.Screen.DIFFICULTY);
 
+			Bitmap bitmap = GameUtility.ScaleDown(Resource.Drawable.background, GameUtility.ScreenWidth(), GameUtility.ScreenHeight());
+			Bitmap backgroundImage = GameThemes.getBackgroundImage(mSelectedTheme);
+			backgroundImage = GameUtility.Crop(backgroundImage, GameUtility.ScreenHeight(), GameUtility.ScreenWidth());
+			Drawable[] backgrounds = new Drawable[2];
+			backgrounds[0] = new BitmapDrawable(Application.Context.Resources, bitmap);
+			backgrounds[1] = new BitmapDrawable(Application.Context.Resources, backgroundImage);
+
+			TransitionDrawable crossfader = new TransitionDrawable(backgrounds);
+			mBackgroundImage.SetImageDrawable(crossfader);
+			crossfader.StartTransition(2000);
 		}
+		
 
 		public void onEvent(FlipDownCardsEvent evt)
 		{
@@ -164,8 +190,70 @@ namespace XamGame.Engine
 			mScreenController.openScreen(ScreenController.Screen.GAME);
 		}
 
-		public void onEvent(FlipCardEvent evt)
+		public async void onEvent(FlipCardEvent evt)
 		{
+			int id = evt.id;
+			if (mFlippedId == -1)
+			{
+				mFlippedId = id;
+				// Log.i("my_tag", "Flip: mFlippedId: " + event.id);
+			}
+			else
+			{
+				if (mPlayingGame.BoardArrangment.isPair(mFlippedId, id))
+				{
+					// Log.i("my_tag", "Flip: is pair: " + mFlippedId + ", " + id);
+					// send event - hide id1, id2
+					await Shared.EventBus.Notify(new HidePairCardsEvent(mFlippedId, id), 1000);
+
+					// play music
+					Music.PlayCorrent();
+
+					mToFlip -= 2;
+					if (mToFlip == 0)
+					{
+						int passedSeconds = (int)(Clock.getInstance().getPassedTime() / 1000);
+						Clock.getInstance().pause();
+						int totalTime = mPlayingGame.BoardConfiguration.Time;
+						GameState gameState = new GameState();
+						mPlayingGame.GameState = gameState;
+						// remained seconds
+						gameState.RemainedSeconds = totalTime - passedSeconds;
+
+						// calc stars
+						if (passedSeconds <= totalTime / 2)
+						{
+							gameState.AchievedStars = 3;
+						}
+						else if (passedSeconds <= totalTime - totalTime / 5)
+						{
+							gameState.AchievedStars = 2;
+						}
+						else if (passedSeconds < totalTime)
+						{
+							gameState.AchievedStars = 1;
+						}
+						else {
+							gameState.AchievedStars = 0;
+						}
+
+						// calc score
+						gameState.AchievedScore = mPlayingGame.BoardConfiguration.Difficulty * gameState.RemainedSeconds * mPlayingGame.Theme.Id;
+
+						// save to memory
+						Memory.Save(mPlayingGame.Theme.Id, mPlayingGame.BoardConfiguration.Difficulty, gameState.AchievedStars);
+
+						await Shared.EventBus.Notify(new GameWonEvent(gameState), 1200);
+					}
+				}
+				else
+				{
+					// Log.i("my_tag", "Flip: all down");
+					// send event - flip all down
+					await Shared.EventBus.Notify(new FlipDownCardsEvent(), 1000);
+				}
+				mFlippedId = -1;
+			}
 		}
 
 		private void arrangeBoard()
@@ -186,7 +274,7 @@ namespace XamGame.Engine
 			ids = ids.OrderBy(item => rnd.Next()).ToList();
 
 			// place the board
-			List<String> tileImageUrls = mPlayingGame.Theme.TileImageUrls;
+			List<string> tileImageUrls = mPlayingGame.Theme.TileImageUrls;
 			tileImageUrls = tileImageUrls.OrderBy(item => rnd.Next()).ToList();
 
 			boardArrangment.pairs = new Dictionary<int, int>();

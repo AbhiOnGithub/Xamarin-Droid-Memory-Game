@@ -7,6 +7,8 @@ using Android.Util;
 using Android.Views;
 using Android.Views.Animations;
 using Android.Widget;
+using XamGame.Common;
+using XamGame.Events;
 using XamGame.Models;
 using XamGame.Utils;
 
@@ -118,9 +120,18 @@ namespace XamGame.UI
 			parent.SetClipChildren(false);
 			mViewReference.Add(id, tileView);
 
-
-			/////////////////////////////////////
-			/// missing Code/////////
+			tileView.setTileImage(mBoardArrangment.getTileBitmap(id, mSize));
+			tileView.Click += (sender, e) =>
+			{
+				if (!mLocked && tileView.isFlippedDown())
+				{
+					tileView.flipUp();
+					flippedUp.Add(id);
+					if (flippedUp.Count == 2)
+						mLocked = true;
+					Shared.EventBus.Notify(new FlipCardEvent(id));
+				}
+			};
 
 			ObjectAnimator scaleXAnimator = ObjectAnimator.OfFloat(tileView, "scaleX", 0.8f, 1f);
 			scaleXAnimator.SetInterpolator(new BounceInterpolator());

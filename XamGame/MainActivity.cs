@@ -7,6 +7,7 @@ using XamGame.Events;
 using Android.Support.V4.App;
 using Android.Graphics;
 using XamGame.Utils;
+using XamGame.UI;
 
 namespace XamGame
 {
@@ -39,6 +40,28 @@ namespace XamGame
 			ScreenController.getInstance().openScreen(ScreenController.Screen.MENU);
 		}
 
+		protected override void OnDestroy()
+		{
+			Shared.Engine.stop();
+			base.OnDestroy();
+		}
+
+		public override void OnBackPressed()
+		{
+			if (PopupManager.isShown())
+			{
+				PopupManager.closePopup();
+				if (ScreenController.getLastScreen() ==  ScreenController.Screen.GAME) 
+				{
+					Shared.EventBus.Notify(new BackGameEvent());
+				}
+			}
+			else if (ScreenController.getInstance().onBack())
+			{
+				base.OnBackPressed();
+			}
+		}
+
 		private void SetBackgroundImage()
 		{
 			Bitmap bitmap = GameUtility.ScaleDown(Resource.Drawable.background, GameUtility.ScreenWidth(), GameUtility.ScreenHeight());
@@ -48,4 +71,3 @@ namespace XamGame
 		}
 	}
 }
-

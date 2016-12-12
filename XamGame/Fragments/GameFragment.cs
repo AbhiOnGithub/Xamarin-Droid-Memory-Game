@@ -96,7 +96,6 @@ namespace XamGame.Fragments
 			mBoardView.flipDownAll();
 		}
 
-
 		public  override void onEvent(HidePairCardsEvent evt) {
 			mBoardView.hideCards(evt.Id1, evt.Id2);
 		}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Android.OS;
 using Java.Lang;
 
@@ -9,7 +10,6 @@ namespace XamGame.Events
 	public class EventBus
 	{
 		private Handler mHandler;
-		private Action action;
 		private readonly object syncLock = new object();
 		private static EventBus mInstance = null;
 		private ConcurrentDictionary<string, List<IEventObserver>> events = new ConcurrentDictionary<string, List<IEventObserver>>();
@@ -43,7 +43,6 @@ namespace XamGame.Events
 				}
 				observers.Add(eventObserver);
 				events.TryAdd(eventType, observers);
-
 			}
 		}
 
@@ -63,27 +62,31 @@ namespace XamGame.Events
 		{
 			lock (syncLock)
 			{
-				List<IEventObserver> observers = events[evt.GetEventType()];
-				if (observers != null)
+				List<IEventObserver> observers;
+				if (events.ContainsKey(evt.GetEventType()))
 				{
-					foreach (IEventObserver observer in observers)
+					observers = events[evt.GetEventType()];
+					if (observers != null)
 					{
-						AbstractEvent abstractEvent = (AbstractEvent)evt;
-						abstractEvent.Fire(observer);
+						foreach (IEventObserver observer in observers)
+						{
+							AbstractEvent abstractEvent = (AbstractEvent)evt;
+							abstractEvent.Fire(observer);
+						}
 					}
 				}
 			}
 		}
 
-		public void Notify(IEvent evt, long delay)
+		public async Task Notify(IEvent evt, long delay)
 		{
-			mHandler.PostDelayed(MyHandlerCallback,delay);
-			this.delay = delay;
+			await NotifyWithDelay(evt);
 		}
 
-		void MyHandlerCallback()
+		async Task NotifyWithDelay(IEvent evt)
 		{
-			mHandler.PostDelayed(action, delay);
+			await Task.Delay(1000);
+			EventBus.mInstance.Notify(evt);
 		}
 	}
 }
