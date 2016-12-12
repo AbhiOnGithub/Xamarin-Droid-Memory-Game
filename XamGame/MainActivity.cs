@@ -1,26 +1,50 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using XamGame.Common;
+using XamGame.Engine;
+using XamGame.Events;
+using Android.Support.V4.App;
+using Android.Graphics;
+using XamGame.Utils;
 
 namespace XamGame
 {
-	[Activity(Label = "Xam Game", MainLauncher = true, Icon = "@mipmap/icon")]
-	public class MainActivity : Activity
+	[Activity(Label = "Xam Game", MainLauncher = true, Icon = "@drawable/icon",Theme = "@android:style/Theme.Holo.NoActionBar")]
+	public class MainActivity : FragmentActivity
 	{
-		int count = 1;
+		private ImageView mBackgroundImage;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
+			Shared.Engine = GameEngine.getInstance();
+			Shared.EventBus = EventBus.getInstance();
+
+
 			// Set our view from the "main" layout resource
-			SetContentView(Resource.Layout.Main);
+			SetContentView(Resource.Layout.activity_main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button>(Resource.Id.myButton);
+			mBackgroundImage = FindViewById<ImageView>(Resource.Id.background_image);
 
-			button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+			Shared.Activity= this;
+			Shared.Engine.start();
+			Shared.Engine.SetBackgroundImageView(mBackgroundImage);
+
+			// set background
+			SetBackgroundImage();
+
+			// set menu
+			ScreenController.getInstance().openScreen(ScreenController.Screen.MENU);
+		}
+
+		private void SetBackgroundImage()
+		{
+			Bitmap bitmap = GameUtility.ScaleDown(Resource.Drawable.background, GameUtility.ScreenWidth(), GameUtility.ScreenHeight());
+			bitmap = GameUtility.Crop(bitmap, GameUtility.ScreenHeight(), GameUtility.ScreenWidth());
+			bitmap = GameUtility.downscaleBitmap(bitmap, 2);
+			mBackgroundImage.SetImageBitmap(bitmap);
 		}
 	}
 }

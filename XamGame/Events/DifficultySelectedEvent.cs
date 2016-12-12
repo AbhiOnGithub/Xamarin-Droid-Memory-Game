@@ -1,13 +1,13 @@
 ﻿using System;
 namespace XamGame.Events
 {
-	public class DifficultySelectedEvent : AbstractEvent
+	public class DifficultySelectedEvent : AbstractEvent,IEvent
 	{
-		private int difficulty;
+		public int Difficulty { get; set; }
 
 		public DifficultySelectedEvent(int difficulty)
 		{
-			this.difficulty = difficulty;
+			this.Difficulty = difficulty;
 		}
 
 		public override void Fire(IEventObserver eventObserver)
@@ -16,6 +16,11 @@ namespace XamGame.Events
 		}
 
 		public override string ToString()
+		{
+			return nameof(DifficultySelectedEvent);
+		}
+
+		public string GetEventType()
 		{
 			return nameof(DifficultySelectedEvent);
 		}

@@ -19,7 +19,7 @@ namespace XamGame.Utils
 
 		public static void LoadFonts()
 		{
-			fonts.Put(Convert.ToInt32(Font.GROBOLD), Typeface.CreateFromAsset(Application.Context.Assets, "fonts/grobold.ttf"));
+			fonts.Put(Convert.ToInt32(Font.GROBOLD), Typeface.CreateFromAsset(Application.Context.Assets, "grobold.ttf"));
 			fontsLoaded = true;
 		}
 

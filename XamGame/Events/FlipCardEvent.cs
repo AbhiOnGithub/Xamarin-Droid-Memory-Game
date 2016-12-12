@@ -1,7 +1,7 @@
 ﻿using System;
 namespace XamGame.Events
 {
-	public class FlipCardEvent : AbstractEvent
+	public class FlipCardEvent : AbstractEvent,IEvent
 	{
 		public int id;
 
@@ -13,6 +13,11 @@ namespace XamGame.Events
 		public override void Fire(IEventObserver eventObserver)
 		{
 			eventObserver.onEvent(this);
+		}
+
+		public string GetEventType()
+		{
+			return nameof(FlipCardEvent);
 		}
 	}
 }

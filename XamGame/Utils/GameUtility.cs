@@ -22,7 +22,7 @@ namespace XamGame.Utils
 			return Application.Context.Resources.DisplayMetrics.HeightPixels;
 		}
 
-		public static Bitmap crop(Bitmap source, int newHeight, int newWidth)
+		public static Bitmap Crop(Bitmap source, int newHeight, int newWidth)
 		{
 			int sourceWidth = source.Width;
 			int sourceHeight = source.Height;
