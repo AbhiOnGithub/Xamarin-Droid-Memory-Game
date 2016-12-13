@@ -310,6 +310,10 @@ namespace XamGame.Engine
 			return mSelectedTheme;
 		}
 
+		/// <summary>
+		/// Sets the background image view.
+		/// </summary>
+		/// <param name="backgroundImage">Background image.</param>
 		public void setBackgroundImageView(ImageView backgroundImage)
 		{
 			mBackgroundImage = backgroundImage;
