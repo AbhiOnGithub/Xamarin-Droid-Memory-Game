@@ -10,6 +10,22 @@ namespace XamGame.Themes
 	{
 		public static String URI_DRAWABLE = "drawable://";
 
+		public static Theme createEmoticonsTheme()
+		{
+			Theme theme = new Theme();
+			theme.Id = 3;
+			theme.Name = "Emoticons";
+			theme.BackgroundImageUrl = URI_DRAWABLE + "back_animals";
+			theme.TileImageUrls = new List<String>();
+			// 40 drawables
+			for (int i = 1; i <= 40; i++)
+			{
+				theme.TileImageUrls.Add(URI_DRAWABLE + $"emoticon_{i}");
+			}
+			return theme;
+		}
+
+
 		public static Theme createAnimalsTheme()
 		{
 			Theme theme = new Theme();

@@ -5,37 +5,54 @@
     android:gravity="center"
     android:orientation="horizontal"
     android:paddingLeft="@dimen/theme_padding"
-    android:paddingRight="@dimen/theme_padding" >
-
-    <RelativeLayout
-        android:id="@+id/theme_animals_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginRight="@dimen/theme_margin"
-        android:layout_weight="1" >
-
-        <ImageView
-            android:id="@+id/theme_animals"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:src="@drawable/animals_theme_star_0" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/theme_monsters_container"
-        android:layout_width="match_parent"
+    android:paddingRight="@dimen/theme_padding">
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/theme_margin"
-        android:layout_weight="1" >
-
-        <ImageView
-            android:id="@+id/theme_monsters"
+        android:orientation="horizontal">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:src="@drawable/monsters_theme_star_0" />
-    </RelativeLayout>
-
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:id="@+id/theme_emoticons_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/theme_margin"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/theme_emoticons"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/animals_theme_star_0" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/theme_animals_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/theme_margin"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/theme_animals"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/animals_theme_star_0" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/theme_monsters_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/theme_margin"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/theme_monsters"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/monsters_theme_star_0" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

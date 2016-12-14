@@ -403,169 +403,289 @@ namespace XamGame
 			public const int button_start_lights = 2130837571;
 			
 			// aapt resource value: 0x7f020044
-			public const int ic_launcher = 2130837572;
+			public const int emoticon_1 = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public const int icon = 2130837573;
+			public const int emoticon_10 = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int level_complete = 2130837574;
+			public const int emoticon_11 = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int level_complete_star = 2130837575;
+			public const int emoticon_12 = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int monsters_theme_star_0 = 2130837576;
+			public const int emoticon_13 = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int monsters_theme_star_1 = 2130837577;
+			public const int emoticon_14 = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int monsters_theme_star_2 = 2130837578;
+			public const int emoticon_15 = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int monsters_theme_star_3 = 2130837579;
+			public const int emoticon_16 = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int mosters_1 = 2130837580;
+			public const int emoticon_17 = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int mosters_10 = 2130837581;
+			public const int emoticon_18 = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int mosters_11 = 2130837582;
+			public const int emoticon_19 = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int mosters_12 = 2130837583;
+			public const int emoticon_2 = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int mosters_13 = 2130837584;
+			public const int emoticon_20 = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int mosters_14 = 2130837585;
+			public const int emoticon_21 = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int mosters_15 = 2130837586;
+			public const int emoticon_22 = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int mosters_16 = 2130837587;
+			public const int emoticon_23 = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int mosters_17 = 2130837588;
+			public const int emoticon_24 = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int mosters_18 = 2130837589;
+			public const int emoticon_25 = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int mosters_19 = 2130837590;
+			public const int emoticon_26 = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int mosters_2 = 2130837591;
+			public const int emoticon_27 = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int mosters_20 = 2130837592;
+			public const int emoticon_28 = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int mosters_21 = 2130837593;
+			public const int emoticon_29 = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int mosters_22 = 2130837594;
+			public const int emoticon_3 = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int mosters_23 = 2130837595;
+			public const int emoticon_30 = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int mosters_24 = 2130837596;
+			public const int emoticon_31 = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int mosters_25 = 2130837597;
+			public const int emoticon_32 = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int mosters_26 = 2130837598;
+			public const int emoticon_33 = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int mosters_27 = 2130837599;
+			public const int emoticon_34 = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int mosters_28 = 2130837600;
+			public const int emoticon_35 = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int mosters_29 = 2130837601;
+			public const int emoticon_36 = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int mosters_3 = 2130837602;
+			public const int emoticon_37 = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int mosters_30 = 2130837603;
+			public const int emoticon_38 = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int mosters_31 = 2130837604;
+			public const int emoticon_39 = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int mosters_32 = 2130837605;
+			public const int emoticon_4 = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int mosters_33 = 2130837606;
+			public const int emoticon_40 = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int mosters_34 = 2130837607;
+			public const int emoticon_5 = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int mosters_35 = 2130837608;
+			public const int emoticon_6 = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int mosters_36 = 2130837609;
+			public const int emoticon_7 = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int mosters_37 = 2130837610;
+			public const int emoticon_8 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int mosters_38 = 2130837611;
+			public const int emoticon_9 = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int mosters_39 = 2130837612;
+			public const int ic_launcher = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int mosters_4 = 2130837613;
+			public const int icon = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int mosters_40 = 2130837614;
+			public const int level_complete = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int mosters_5 = 2130837615;
+			public const int level_complete_star = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int mosters_6 = 2130837616;
+			public const int monsters_theme_star_0 = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int mosters_7 = 2130837617;
+			public const int monsters_theme_star_1 = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int mosters_8 = 2130837618;
+			public const int monsters_theme_star_2 = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int mosters_9 = 2130837619;
+			public const int monsters_theme_star_3 = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int settings_popup = 2130837620;
+			public const int mosters_1 = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int tile = 2130837621;
+			public const int mosters_10 = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int tile_back = 2130837622;
+			public const int mosters_11 = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int tile_back_star = 2130837623;
+			public const int mosters_12 = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int time_bar = 2130837624;
+			public const int mosters_13 = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int title = 2130837625;
+			public const int mosters_14 = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int tooltip_play = 2130837626;
+			public const int mosters_15 = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int mosters_16 = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int mosters_17 = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int mosters_18 = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int mosters_19 = 2130837630;
+			
+			// aapt resource value: 0x7f02007f
+			public const int mosters_2 = 2130837631;
+			
+			// aapt resource value: 0x7f020080
+			public const int mosters_20 = 2130837632;
+			
+			// aapt resource value: 0x7f020081
+			public const int mosters_21 = 2130837633;
+			
+			// aapt resource value: 0x7f020082
+			public const int mosters_22 = 2130837634;
+			
+			// aapt resource value: 0x7f020083
+			public const int mosters_23 = 2130837635;
+			
+			// aapt resource value: 0x7f020084
+			public const int mosters_24 = 2130837636;
+			
+			// aapt resource value: 0x7f020085
+			public const int mosters_25 = 2130837637;
+			
+			// aapt resource value: 0x7f020086
+			public const int mosters_26 = 2130837638;
+			
+			// aapt resource value: 0x7f020087
+			public const int mosters_27 = 2130837639;
+			
+			// aapt resource value: 0x7f020088
+			public const int mosters_28 = 2130837640;
+			
+			// aapt resource value: 0x7f020089
+			public const int mosters_29 = 2130837641;
+			
+			// aapt resource value: 0x7f02008a
+			public const int mosters_3 = 2130837642;
+			
+			// aapt resource value: 0x7f02008b
+			public const int mosters_30 = 2130837643;
+			
+			// aapt resource value: 0x7f02008c
+			public const int mosters_31 = 2130837644;
+			
+			// aapt resource value: 0x7f02008d
+			public const int mosters_32 = 2130837645;
+			
+			// aapt resource value: 0x7f02008e
+			public const int mosters_33 = 2130837646;
+			
+			// aapt resource value: 0x7f02008f
+			public const int mosters_34 = 2130837647;
+			
+			// aapt resource value: 0x7f020090
+			public const int mosters_35 = 2130837648;
+			
+			// aapt resource value: 0x7f020091
+			public const int mosters_36 = 2130837649;
+			
+			// aapt resource value: 0x7f020092
+			public const int mosters_37 = 2130837650;
+			
+			// aapt resource value: 0x7f020093
+			public const int mosters_38 = 2130837651;
+			
+			// aapt resource value: 0x7f020094
+			public const int mosters_39 = 2130837652;
+			
+			// aapt resource value: 0x7f020095
+			public const int mosters_4 = 2130837653;
+			
+			// aapt resource value: 0x7f020096
+			public const int mosters_40 = 2130837654;
+			
+			// aapt resource value: 0x7f020097
+			public const int mosters_5 = 2130837655;
+			
+			// aapt resource value: 0x7f020098
+			public const int mosters_6 = 2130837656;
+			
+			// aapt resource value: 0x7f020099
+			public const int mosters_7 = 2130837657;
+			
+			// aapt resource value: 0x7f02009a
+			public const int mosters_8 = 2130837658;
+			
+			// aapt resource value: 0x7f02009b
+			public const int mosters_9 = 2130837659;
+			
+			// aapt resource value: 0x7f02009c
+			public const int settings_popup = 2130837660;
+			
+			// aapt resource value: 0x7f02009d
+			public const int tile = 2130837661;
+			
+			// aapt resource value: 0x7f02009e
+			public const int tile_back = 2130837662;
+			
+			// aapt resource value: 0x7f02009f
+			public const int tile_back_star = 2130837663;
+			
+			// aapt resource value: 0x7f0200a0
+			public const int time_bar = 2130837664;
+			
+			// aapt resource value: 0x7f0200a1
+			public const int title = 2130837665;
+			
+			// aapt resource value: 0x7f0200a2
+			public const int tooltip_play = 2130837666;
 			
 			static Drawable()
 			{
@@ -601,11 +721,11 @@ namespace XamGame
 			// aapt resource value: 0x7f090011
 			public const int google_play_button = 2131296273;
 			
-			// aapt resource value: 0x7f090022
-			public const int image = 2131296290;
+			// aapt resource value: 0x7f090024
+			public const int image = 2131296292;
 			
-			// aapt resource value: 0x7f090023
-			public const int image_top = 2131296291;
+			// aapt resource value: 0x7f090025
+			public const int image_top = 2131296293;
 			
 			// aapt resource value: 0x7f090002
 			public const int popup_container = 2131296258;
@@ -664,17 +784,23 @@ namespace XamGame
 			// aapt resource value: 0x7f09000e
 			public const int start_game_button_lights = 2131296270;
 			
-			// aapt resource value: 0x7f09001f
-			public const int theme_animals = 2131296287;
-			
-			// aapt resource value: 0x7f09001e
-			public const int theme_animals_container = 2131296286;
-			
 			// aapt resource value: 0x7f090021
-			public const int theme_monsters = 2131296289;
+			public const int theme_animals = 2131296289;
 			
 			// aapt resource value: 0x7f090020
-			public const int theme_monsters_container = 2131296288;
+			public const int theme_animals_container = 2131296288;
+			
+			// aapt resource value: 0x7f09001f
+			public const int theme_emoticons = 2131296287;
+			
+			// aapt resource value: 0x7f09001e
+			public const int theme_emoticons_container = 2131296286;
+			
+			// aapt resource value: 0x7f090023
+			public const int theme_monsters = 2131296291;
+			
+			// aapt resource value: 0x7f090022
+			public const int theme_monsters_container = 2131296290;
 			
 			// aapt resource value: 0x7f09000b
 			public const int time_bar_image = 2131296267;

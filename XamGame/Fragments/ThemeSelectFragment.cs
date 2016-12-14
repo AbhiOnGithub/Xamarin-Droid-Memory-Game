@@ -15,14 +15,23 @@ namespace XamGame.Fragments
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			View view = LayoutInflater.From(Application.Context).Inflate(Resource.Layout.theme_select_fragment, container, false);
+			View emoticons = view.FindViewById(Resource.Id.theme_emoticons_container);
 			View animals = view.FindViewById(Resource.Id.theme_animals_container);
 			View monsters = view.FindViewById(Resource.Id.theme_monsters_container);
+
+			Theme themeEmoticons = GameThemes.createEmoticonsTheme();
+			setStars((ImageView)animals.FindViewById(Resource.Id.theme_emoticons), themeEmoticons, "emoticons");
 
 			Theme themeAnimals = GameThemes.createAnimalsTheme();
 			setStars((ImageView)animals.FindViewById(Resource.Id.theme_animals), themeAnimals, "animals");
 
 			Theme themeMonsters = GameThemes.createMosterTheme();
 			setStars((ImageView)monsters.FindViewById(Resource.Id.theme_monsters), themeMonsters, "monsters");
+
+			emoticons.Click += (sender, e) =>
+			{
+				Shared.EventBus.Notify(new ThemeSelectedEvent(themeEmoticons));
+			};
 
 			animals.Click += (sender, e) =>
 			{
